@@ -1,12 +1,9 @@
-﻿using SimpleRestAPI.Models;
+﻿
+
+using SimpleRestAPI.Models;
 using SimpleRestAPI.Repositories.Interfaces;
 using SimpleRestAPI.Services.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Threading.Tasks;
-using Document = SimpleRestAPI.Models.Document;
 
 namespace SimpleRestAPI.Services.Implimentations
 {
@@ -40,7 +37,7 @@ namespace SimpleRestAPI.Services.Implimentations
             var car = Cars.Get(carId);
             var worker = Workers.Get(workerId);
 
-            Documents.Create(new System.Reflection.Metadata.Document
+            Documents.Create(new Document
             {
                 CarId = car.Id,
                 WorkerId = worker.Id,

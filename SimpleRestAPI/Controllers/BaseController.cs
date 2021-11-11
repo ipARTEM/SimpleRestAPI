@@ -1,22 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleRestAPI.Models;
 using SimpleRestAPI.Repositories.Interfaces;
 using SimpleRestAPI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
+
 using System.Threading.Tasks;
 
 namespace SimpleRestAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MainController : ControllerBase
+    public class BaseController : ControllerBase
     {
         private IRepairService RepairService { get; set; }
         private IBaseRepository<Document> Documents { get; set; }
 
-        public MainController(IRepairService repairService, IBaseRepository<Document> document)
+        public BaseController(IRepairService repairService, IBaseRepository<Document> document)
         {
             RepairService = repairService;
             Documents = document;
